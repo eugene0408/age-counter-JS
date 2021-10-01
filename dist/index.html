@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<!-- <base href="/"> -->
+
+	<title></title>
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dist/preview.jpg">
+	
+	<link rel="stylesheet" href="css/app.min.css">
+
+
+
+</head>
+
+<body>
+<!-- Language select
+------------------------------- -->
+	<div class="lang-select">
+		<div class="lang-select__items">
+			<button class="eng-btn">
+				<img src="images/dist/free-icon-united-kingdom.svg" alt="#">
+				English
+			</button>
+			<button class="ua-btn">
+				<img src="images/dist/free-icon-ukraine.svg" alt="#">
+				Українська
+			</button>
+			<button class="ru-btn">
+				<img src="images/dist/free-icon-russia.svg" alt="#">
+				Русский
+			</button>
+		</div>
+	</div>
+
+	<div class="selected-lang-icon">
+		<img src="images/dist/free-icon-united-kingdom.svg" alt="#">
+	</div>
+
+	<div class="container">
+
+		<!-- Input screen
+		-------------------------------- -->
+		<div class="row">
+			<div class="col-12 d-flex justify-content-center align-items-center" style="height: 100vh;">
+				<div class="inputs-wrapper">
+
+					<h1 id="main-header"><span class="yellow">Date</span> of your birthday<span class="yellow">:</span> </h1>
+					
+					<div class="inputs">
+				
+						<div class="inputs__item">
+							<label for="year" id="year-label">Year</label>
+							<select class="form-select" id="year"></select>
+						</div>
+						
+						<div class="inputs__item">
+							<label for="month" id="month-label">Month</label>
+							<select class="form-select" id="month"></select>
+						</div>
+				
+						<div class="inputs__item">
+							<label for="" id="day-label">Day</label>
+							<select class="form-select" id="day" ></select>
+						</div>
+				
+						
+				
+					</div>
+				
+						<button class="button start-btn" id="start-button">Start</button>
+				</div>
+				
+				
+			</div>
+		</div>
+
+		<!-- Result screen
+		----------------------------------- -->
+		<div class="row">
+			<div class="col-12" style="height: 100vh;">
+				<div class="out-wrapper">
+					<!-- JS created result -->
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Portfolio link
+	------------------------------------>
+	<a href="https://eugenelemak.netlify.app" target="_blank" class="portfolio-link">
+		<span>L</span>emak<span>_</span>Evg
+		<div class="portfolio-link__img">
+			<img src="" alt="">
+		</div>
+	</a>
+
+
+
+
+	<!-- Languages content
+	------------------------------- -->
+	<div class="out-language-options" style="display: none;">
+
+		<!-- English 
+		----------------------------- -->
+		<div class="main-header-en">
+			<span class="yellow">Date</span> of your birthday<span class="yellow">:</span>
+		</div>
+
+		<div class="year-en">
+			Year
+		</div>
+		<div class="month-en">
+			Month
+		</div>
+		<div class="day-en">
+			Day
+		</div>
+
+		<div class="button-en"> Start </div>
+
+		
+		<div class="out-past-eng">
+			<h1><span class="orange">Today</span> you are<span class="orange">:</span><br> 
+				<span class="yellow" id="full-years">0</span> years <span class="yellow" id="full-months">0</span> months and <span class="yellow" id="full-days">0</span> days<br>
+				 old</h1>
+				<h2><span class="orange">You</span> have lived <span class="orange">:</span></h2>
+				<ul>
+					<li><span class="yellow" id="days-diff">0</span> days<span class="orange">,</span></li>
+					<li><span class="yellow" id="hours-diff">0</span> hours<span class="orange">,</span></li>
+					<li><span class="yellow" id="seconds-diff">0</span> seconds<span class="orange">.</span></li>
+				</ul>
+			<button class="button return-btn">Return</button>
+		</div>
+
+		<div class="out-future-eng">
+	 		<h1><span class="orange">Invalid</span> date</h1><br>
+			<h2 class="invalid-date"></h2>
+		 	<button class="button return-btn">Return</button>
+		</div>
+
+		<!-- Ukrainian
+		----------------------------------- -->
+
+		<div class="main-header-ua">
+			<span class="yellow">Дата</span> народження<span class="yellow">:</span> 
+		</div>
+
+		<div class="year-ua">
+			Рік
+		</div>
+		<div class="month-ua">
+			Місяць
+		</div>
+		<div class="day-ua">
+			День
+		</div>
+
+		<div class="button-ua"> Старт </div>
+
+
+		<div class="out-past-ua">
+			<h1><span class="orange">Сьогодні</span> вам<span class="orange">:</span><br> 
+				<span class="yellow" id="full-years">0</span> років <span class="yellow" id="full-months">0</span> місяців і <span class="yellow" id="full-days">0</span> днів<br>
+				</h1>
+				<h2><span class="orange">Ви</span>  прожили<span class="orange">:</span></h2>
+				<ul>
+					<li><span class="yellow" id="days-diff">0</span> днів<span class="orange">,</span></li>
+					<li><span class="yellow" id="hours-diff">0</span> годин<span class="orange">,</span></li>
+					<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
+				</ul>
+			<button class="button return-btn">Назад</button>
+		</div>
+
+		<div class="out-future-ua">
+			<h1><span class="orange">Неправильна</span> дата</h1>
+			<button class="button return-btn">Назад</button>
+	   </div>
+
+		<!-- Russian
+		------------------------------------ -->
+		<div class="main-header-ru">
+			<span class="yellow">Дата</span> рождения<span class="yellow">:</span> 
+		</div>
+
+		<div class="year-ru">
+			Год
+		</div>
+		<div class="month-ru">
+			Месяц
+		</div>
+		<div class="day-ru">
+			День
+		</div>
+
+		<div class="button-ru"> Старт </div>
+
+
+		<div class="out-past-ru">
+			<h1><span class="orange">Сегодня</span> вам<span class="orange">:</span><br> 
+				<span class="yellow" id="full-years">0</span> лет <span class="yellow" id="full-months">0</span> месяцев и <span class="yellow" id="full-days">0</span> дней<br>
+				</h1>
+				<h2>Вы<span class="orange"> прожили</span>:</h2>
+				<ul>
+					<li><span class="yellow" id="days-diff">0</span> дней<span class="orange">,</span></li>
+					<li><span class="yellow" id="hours-diff">0</span> часов<span class="orange">,</span></li>
+					<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
+				</ul>
+			<button class="button return-btn">Назад</button>
+		</div>	
+
+		<div class="out-future-ru">
+			<h1><span class="orange">Неправильная</span> дата</h1>
+			<button class="button return-btn">Назад</button>
+	   </div>
+
+	</div>
+
+
+	<script src="js/app.min.js"></script>
+
+</body>
+</html>
+
+
+
