@@ -2,15 +2,33 @@
 @use 'sass:color'
 
 @import config
+@import clock
 
 
 body 
     display: inline-block
     height: 100vh
     width: 100vw
-    background: $dark-bg
     color: #fff
+    background: $dark-bg
     overflow: hidden
+.bg-image
+    position: fixed
+    top: 0
+    left: 0
+    height: 100vh
+    width: 100vw
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 0
+.cover
+    background: rgba($dark-bg, .9)
+    position: fixed
+    top: 0
+    left: 0
+    height: 100vh
+    width: 100vw
 .lang-select
     position: absolute
     left: 0
@@ -24,6 +42,10 @@ body
     background: $dark-bg
     z-index: 100
     transition: .7s ease
+    border: 1px solid rgba(#fff, .1)
+    border-radius: 0 15px 15px 0
+    background: rgba($dark-bg, .97)
+    backdrop-filter: blur(8px)
     img
         height: 1.5em
         margin-right: .5em
@@ -61,36 +83,121 @@ body
     justify-content: center
     align-items: center
     flex-direction: column
+    z-index: 1
 .inputs-wrapper
     transition: all 1s ease
 h1	
-    font-size: 45px
-    font-weight: 900
-    padding-bottom: 1em
+    font-size: 38px
+    font-weight: 800
     text-align: center
+    z-index: 1
 .out-wrapper
     transition: 1s ease
     h2
         font-weight: 800
-    ul 
+.out-main, .out-time 
+    background: rgba(#000, .1)
+    border: 1px solid rgba(#000, .05)
+    backdrop-filter: blur(4px)
+    box-shadow: 0 4px 30px rgba(#000, 0.05)
+    border-radius: 10px  
+    padding: .5em 1em
+    text-align: center
+.out-time
+    ul
         list-style: none
-        width: 60%
-        li 
-            font-weight: 600
+    li
+        font-weight: 600
+        line-height: 1
+        margin-top: .3em
+        width: 120%
+        background: rgba(#000, .3)
+        border: 1px solid rgba(#000, .05)
+        backdrop-filter: blur(4px)
+        box-shadow: 0 4px 30px rgba(#000, 0.05)
+        border-radius: 10px  
+        padding: .5em 1em
+        text-align: left
         .yellow
-            font-size: 38px
+            font-size: 36px
             font-weight: 800
     +media-breakpoint-down(sm)
-        h1
-            font-size: 36px
-        ul 
+        ul
             width: 100%
+            padding-left: 0
+            .yellow
+                font-size: 28px
+
+.out-main
+    padding: .2em 1em
+    h1
+        background: rgba(#000, .3)
+        border: 1px solid rgba(#000, .05)
+        backdrop-filter: blur(4px)
+        box-shadow: 0 4px 30px rgba(#000, 0.05)
+        border-radius: 10px 
+        padding: .3em .5em
+        br 
+            display: none
+    +media-breakpoint-down(sm)
+        padding: .1em .2em 
+        width: 100vw
+        h1
+            padding: .2em 0
+            font-size: 32px
+            width: 100%
+            br
+                display: inline
+.bday-wrapper, .happy-bday
+    position: relative
+    padding: .5em 1em
+    margin-bottom: 2em
+    margin-top: 1em
+    text-align: center
+    background: rgba(#000, .1)
+    backdrop-filter: blur(10px) 
+    border-radius: 10px 
+.bday-wrapper
+    padding-bottom: 1.5em  
+    .yellow
+        font-size: 1.5em
+        background: rgba(#000, .3)
+        border: 1px solid rgba(#000, .05)
+        backdrop-filter: blur(4px)
+        box-shadow: 0 4px 30px rgba(#000, 0.05)
+        border-radius: 10px 
+        padding: 0 .8em
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%) translateY(50%)
+    +media-breakpoint-down(sm)
+        padding: .8em .3em
+        width: fit-content
+        .yellow
+            font-size: 36px
+
+.happy-bday
+    h2
+        animation: pulse 2s infinite linear
+
+@keyframes pulse
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.1)
+    100%
+        transform: scale(1)
+        
+
 .inputs 
     display: flex
     justify-content: center
     align-items: center
     flex-direction: row
     padding-bottom: 4em
+    padding-top: .5em
+    margin-top: 2em
     &__item
         display: inline-block
         width: 8em
@@ -102,18 +209,22 @@ h1
         font-weight: 600
     +media-breakpoint-down(sm)
         flex-direction: column
+        padding-top: 0
+        margin-top: 1em
 .button
-    margin-top: 3em
-    font-size: 30px
+    margin-top: 2em
+    font-size: 25px
     padding: .2em 2em
     border: none
-    border-radius: 12px
-    background: $orange
-    color: #fff
-    font-weight: 900
+    border-radius: 10px
+    background: $yellow
+    color: #000
+    font-weight: 800
     transition: .3s ease
-    &:hover
-        transform: scale(1.05)
+    +media-breakpoint-up(md)
+        &:hover
+            background: $orange
+            color: #fff
     +media-breakpoint-down(sm)
         margin-top: 1.5em
         font-size: 25px
@@ -128,22 +239,80 @@ h1
 .show-item
     display: inline-block
 
-.portfolio-link
+.about-link
     position: fixed
     right: 20px
-    bottom: 0
+    bottom: 10px
     line-height: 1
     display: inline-block
     font-size: 16px
     font-weight: 500
-    color: rgba(#fff, .3)
+    color: rgba(#fff, .6)
     transition: .3s ease
+    cursor: pointer
+    z-index: 50
     &:hover
         color: #fff
         span
             color: $orange
 
+.about
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    border-radius: 15px 0 0 15px
+    background: rgba($dark-bg, .97)
+    backdrop-filter: blur(8px)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    z-index: 99
+    transform: translateX(100%)
+    transition: all .8s ease
+    text-align: center
+    &__text
+        padding-top: 2em
+    .close
+        position: relative
+        height: 50px
+        width: 50px
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        margin-top: 2em
+        &::before, &::after
+            position: absolute
+            content: ""
+        &::before
+            left: 0
+            height: 30px
+            width: 30px
+            border-left: 2px solid #fff
+            border-top: 2px solid #fff
+            transform: rotate(-45deg)
+        &::after
+            right: 0
+            height: 2px
+            width: 30px
+            background: #fff
+            animation: arrow-pulse 1s linear infinite
+    @keyframes arrow-pulse
+        0%
+            transform: translateX(0)
+        50%
+            transform: translateX(-5px)
+        100%
+            transform: translateX(0)
+            
+            
+            
 
+    h4
+        margin-top: .5em
 .out-language-options
     display: none
     opacity: 0

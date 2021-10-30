@@ -4,9 +4,10 @@
 <head>
 
 	<meta charset="utf-8">
+	<!-- <base href="/"> -->
 
-	<title>Age Counter</title>
-	<meta name="description" content="How old are you today">
+	<title><!--#echo var="title" --></title>
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -20,6 +21,75 @@
 </head>
 
 <body>
+	<div class="bg-image">
+		<div class="clock">
+			<div class="clock__second"></div>
+			<div class="clock__minute"></div>
+			  <div class="clock__hour"></div>
+			<div class="clock__axis"></div>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+			  <section class="clock__indicator"></section>
+		  </div>
+	</div>
+	<div class="cover"></div>
 <!-- Language select
 ------------------------------- -->
 	<div class="lang-select">
@@ -51,7 +121,7 @@
 			<div class="col-12 d-flex justify-content-center align-items-center" style="height: 100vh;">
 				<div class="inputs-wrapper">
 
-					<h1 id="main-header"><span class="yellow">Date</span> of your birthday<span class="yellow">:</span> </h1>
+					<h1 id="main-header"><span class="yellow">Date</span> of your birthday<span class="orange">:</span> </h1>
 					
 					<div class="inputs">
 				
@@ -93,26 +163,35 @@
 
 	</div>
 
-	<!-- Portfolio link
+	<!-- About 
 	------------------------------------>
-	<a href="https://eugenelemak.netlify.app" target="_blank" class="portfolio-link">
-		<span>L</span>emak<span>_</span>Evg
-		<div class="portfolio-link__img">
-			<img src="" alt="">
+	<div class="about-link">
+		<span>A</span>bout
+	</div>
+
+	<div class="about">
+		<div class="about__text">
+			<h4>Made by<span class="yellow">:</span><br>
+				<span class="orange">Eugene Lemak</span>
+			</h4>
+			<h4>View code on<span class="orange">:</span><br>
+				<a href="https://github.com/eugene0408/age_counter" target="_blank"><span class="yellow">GitHub</span></a>
+			</h4>
 		</div>
-	</a>
+		<div class="close"></div>
+	</div>
 
 
 
 
 	<!-- Languages content
-	------------------------------- -->
+	----------------------------------------------------------------------------------------------------------------------------------------- -->
 	<div class="out-language-options" style="display: none;">
 
 		<!-- English 
 		----------------------------- -->
 		<div class="main-header-en">
-			<span class="yellow">Date</span> of your birthday<span class="yellow">:</span>
+			<span class="yellow">Date</span> of your birthday<span class="orange">:</span>
 		</div>
 
 		<div class="year-en">
@@ -126,32 +205,75 @@
 		</div>
 
 		<div class="button-en"> Start </div>
-
+		<!-- ----------------------------------------------------------------------------------- -->
 		
 		<div class="out-past-eng">
-			<h1><span class="orange">Today</span> you are<span class="orange">:</span><br> 
-				<span class="yellow" id="full-years">0</span> years <span class="yellow" id="full-months">0</span> months and <span class="yellow" id="full-days">0</span> days<br>
-				 old</h1>
-				<h2><span class="orange">You</span> have lived <span class="orange">:</span></h2>
-				<ul>
-					<li><span class="yellow" id="days-diff">0</span> days<span class="orange">,</span></li>
-					<li><span class="yellow" id="hours-diff">0</span> hours<span class="orange">,</span></li>
-					<li><span class="yellow" id="seconds-diff">0</span> seconds<span class="orange">.</span></li>
-				</ul>
-			<button class="button return-btn">Return</button>
-		</div>
 
-		<div class="out-future-eng">
+
+			<div class="out-main">
+				<h2><span class="orange">Today</span> you are<span class="orange">:</span></h2>
+					<h1>
+						<span class="yellow" id="full-years">0</span>
+						 years 
+						<span class="yellow" id="full-months">0</span>
+						 months and 
+						<span class="yellow" id="full-days">0</span>
+						 days<br>
+						 old
+					</h1>
+				
+			</div>
+				<!-- ------------------------------------------------------------ -->
+				<div class="bday-wrapper">
+					<h2>
+						Days to 
+						<span class="orange">
+							next
+						</span>
+							birthday 
+						<span class="orange">
+								:
+						</span>
+						<br>
+						<span class="yellow" id="days-to-bday">
+							0
+						</span>
+					</h2>
+				</div>
+			
+				<div class="happy-bday" style="display: none;">
+					<h2>Happy <span class="orange">birthday</span> to you<span class="orange">!</span></h2>
+				</div>
+			
+				<!-- ------------------------------------------------------------------------ -->
+				<div class="out-time">
+					<h2><span class="orange">You</span> have lived <span class="orange">:</span></h2>
+					<ul>
+						<li><span class="yellow" id="days-diff">0</span> days<span class="orange">,</span></li>
+						<li><span class="yellow" id="hours-diff">0</span> hours<span class="orange">,</span></li>
+						<li><span class="yellow" id="seconds-diff">0</span> seconds<span class="orange">.</span></li>
+					</ul>
+				</div>
+			
+			<button class="button return-btn">Return</button>
+
+
+		</div>
+		<!-- --------------------------------------------------------------- -->
+		<div class="out-error-eng">
 	 		<h1><span class="orange">Invalid</span> date</h1><br>
 			<h2 class="invalid-date"></h2>
 		 	<button class="button return-btn">Return</button>
 		</div>
 
+
+
+
 		<!-- Ukrainian
 		----------------------------------- -->
 
 		<div class="main-header-ua">
-			<span class="yellow">Дата</span> народження<span class="yellow">:</span> 
+			<span class="yellow">Дата</span> народження<span class="orange">:</span> 
 		</div>
 
 		<div class="year-ua">
@@ -165,30 +287,64 @@
 		</div>
 
 		<div class="button-ua"> Старт </div>
-
+		<!-- ------------------------------- -->
 
 		<div class="out-past-ua">
-			<h1><span class="orange">Сьогодні</span> вам<span class="orange">:</span><br> 
-				<span class="yellow" id="full-years">0</span> років <span class="yellow" id="full-months">0</span> місяців і <span class="yellow" id="full-days">0</span> днів<br>
-				</h1>
-				<h2><span class="orange">Ви</span>  прожили<span class="orange">:</span></h2>
-				<ul>
-					<li><span class="yellow" id="days-diff">0</span> днів<span class="orange">,</span></li>
-					<li><span class="yellow" id="hours-diff">0</span> годин<span class="orange">,</span></li>
-					<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
-				</ul>
+
+
+			<div class="out-main">
+				<h2><span class="orange">Сьогодні</span> вам<span class="orange">:</span></h2>
+				
+					<h1>
+						<span class="yellow" id="full-years">0</span> років <span class="yellow" id="full-months">0</span> місяців і<br> <span class="yellow" id="full-days">0</span> днів
+					</h1>
+			</div>
+			
+			<!-- --------------------------------------------------------------------- -->
+			<div class="bday-wrapper">
+				<h2>
+					Днів до 
+					<span class="orange">
+						дня
+					</span>
+					 народження
+					<span class="orange">
+						 :
+					</span>
+					<br>
+					<span class="yellow" id="days-to-bday">
+						0
+					</span>
+				</h2>
+			</div>
+
+			<div class="happy-bday" style="display: none;">
+				<h2>З <span class="orange">днем</span> народження<span class="orange">!</span></h2>
+			</div>
+
+			<!-- ------------------------------------------------------------------------- -->
+				<div class="out-time">
+					<h2><span class="orange">Ви</span>  прожили<span class="orange">:</span></h2>
+					<ul>
+						<li><span class="yellow" id="days-diff">0</span> днів<span class="orange">,</span></li>
+						<li><span class="yellow" id="hours-diff">0</span> годин<span class="orange">,</span></li>
+						<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
+					</ul>
+				</div>
 			<button class="button return-btn">Назад</button>
 		</div>
-
-		<div class="out-future-ua">
+		<!-- ------------------------------------------- -->
+		<div class="out-error-ua">
 			<h1><span class="orange">Неправильна</span> дата</h1>
 			<button class="button return-btn">Назад</button>
 	   </div>
 
+
+
 		<!-- Russian
 		------------------------------------ -->
 		<div class="main-header-ru">
-			<span class="yellow">Дата</span> рождения<span class="yellow">:</span> 
+			<span class="yellow">Дата</span> рождения<span class="orange">:</span> 
 		</div>
 
 		<div class="year-ru">
@@ -202,22 +358,54 @@
 		</div>
 
 		<div class="button-ru"> Старт </div>
-
+		<!-- ------------------------------------------->
 
 		<div class="out-past-ru">
-			<h1><span class="orange">Сегодня</span> вам<span class="orange">:</span><br> 
-				<span class="yellow" id="full-years">0</span> лет <span class="yellow" id="full-months">0</span> месяцев и <span class="yellow" id="full-days">0</span> дней<br>
-				</h1>
-				<h2>Вы<span class="orange"> прожили</span>:</h2>
-				<ul>
-					<li><span class="yellow" id="days-diff">0</span> дней<span class="orange">,</span></li>
-					<li><span class="yellow" id="hours-diff">0</span> часов<span class="orange">,</span></li>
-					<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
-				</ul>
+			<div class="out-main">
+				<h2><span class="orange">Сегодня</span> вам<span class="orange">:</span></h2> 
+					<h1>
+						<span class="yellow" id="full-years">0</span> лет <span class="yellow" id="full-months">0</span> месяцев и<br> <span class="yellow" id="full-days">0</span> дней<br>
+					</h1>
+			</div>
+			
+
+		<!-- --------------------------------------------------------------->
+
+			<div class="bday-wrapper">
+				<h2>
+					Дней до 
+					<span class="orange">
+						дня
+					</span>
+					 рождения
+					<span class="orange">
+						 :
+					</span>
+					<br>
+					<span class="yellow" id="days-to-bday">
+						0
+					</span>
+				</h2>
+			</div>
+
+			<div class="happy-bday" style="display: none;">
+				<h2>С <span class="orange">днем</span> рождения<span class="orange">!</span></h2>
+			</div>
+
+			<!-- ------------------------------------------------------------------------------------ -->
+
+				<div class="out-time">
+					<h2>Вы<span class="orange"> прожили</span>:</h2>
+					<ul>
+						<li><span class="yellow" id="days-diff">0</span> дней<span class="orange">,</span></li>
+						<li><span class="yellow" id="hours-diff">0</span> часов<span class="orange">,</span></li>
+						<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
+					</ul>
+				</div>
 			<button class="button return-btn">Назад</button>
 		</div>	
-
-		<div class="out-future-ru">
+		<!-- ---------------------------------------------------------------------------------------- -->
+		<div class="out-error-ru">
 			<h1><span class="orange">Неправильная</span> дата</h1>
 			<button class="button return-btn">Назад</button>
 	   </div>

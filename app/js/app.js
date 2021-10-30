@@ -123,13 +123,11 @@ let monthLength = 31;
 	};
 
 	function showLangs() {
-		langContainer.style.transform = 'translateY(0)';
-		langContainer.style.opacity = '1';
+		langContainer.style.transform = 'translateX(0)';
 		langContainer.style.zIndex = '100';
 	};
 	function hideLangs() {
-		langContainer.style.transform = 'translateY(-100%)';
-		langContainer.style.opacity = '0';
+		langContainer.style.transform = 'translateX(-100%)';
 		langContainer.style.zIndex = '-1';
 	};
 
@@ -167,16 +165,16 @@ let monthLength = 31;
 
 	const resultLang = {
 		pastEng: document.querySelector('.out-past-eng').innerHTML,
-		futureEng: document.querySelector('.out-future-eng').innerHTML,
+		errorEng: document.querySelector('.out-error-eng').innerHTML,
 		pastUkr: document.querySelector('.out-past-ua').innerHTML,
-		futureUkr: document.querySelector('.out-future-ua').innerHTML,
+		errorUkr: document.querySelector('.out-error-ua').innerHTML,
 		pastRus: document.querySelector('.out-past-ru').innerHTML,
-		futureRus: document.querySelector('.out-future-ru').innerHTML,
+		errorRus: document.querySelector('.out-error-ru').innerHTML,
 	};
 
 
 	let resultPast = '';
-	let resultFurure = '';
+	let resultError = '';
 
 
 	function translateMain() {
@@ -194,7 +192,7 @@ let monthLength = 31;
 				displayMonths();
 
 				resultPast = resultLang.pastEng;
-				resultFurure = resultLang.futureEng;
+				resultError = resultLang.errorEng;
 				break;
 			case selectedLang == 'UA':
 				for(let i = 0; i < mainValues.length; i++){
@@ -204,7 +202,7 @@ let monthLength = 31;
 				displayMonths();
 
 				resultPast = resultLang.pastUkr;
-				resultFurure = resultLang.futureUkr;
+				resultError = resultLang.errorUkr;
 				break;
 			case selectedLang == 'RU':
 				for(let i = 0; i < mainValues.length; i++){
@@ -214,7 +212,7 @@ let monthLength = 31;
 				displayMonths();
 
 				resultPast = resultLang.pastRus;
-				resultFurure = resultLang.futureRus;
+				resultError = resultLang.errorRus;
 				break;
 		}
 	}
@@ -282,14 +280,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		day = hour * 24,
 		year = day * 365.2425;
 
-		const curDate = new Date(),
-			curMonth = curDate.getMonth()+1,
-			curDay = curDate.getDate(),
+		// current date
+		const curDate = new Date(),			 
+			curMonth = curDate.getMonth()+1, //number of month
+			curDay = curDate.getDate(),      //number of day in month
+			curYear = curDate.getFullYear(),
+			//user input date
 			inputDay = daysOut.value,
 			inputMonth = monthsOut.value,
 			inputYear = yearsOut.value,
-			inputDate = `${inputMonth},${inputDay},${inputYear}`,
+			inputDate = `${inputMonth},${inputDay},${inputYear}`, 
 			startDate = new Date(inputDate);
+
 		
 		// Time between two dates in miliseconds
 		const timeDiff = (curDate - startDate);
@@ -314,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		};
 
 
-	
+
 		// Calculating days remainder from full month
 		function diffDays(cur, inp){
 			if(inp > cur){
@@ -325,6 +327,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		let fullDays = diffDays(curDay, inputDay);
 
 
+
+		// Days to next birthday
+		let bDay = '';
+		
+		const nextBday = ()=>{
+
+			switch(true){
+				case (curMonth > inputMonth) || ((curMonth == inputMonth) && (curDay > inputDay)):
+					bDay = new Date(`${inputMonth}, ${inputDay}, ${curYear + 1}`);
+				break;
+				case (curMonth < inputMonth) || ((curMonth == inputMonth) && (curDay < inputDay)):
+					bDay = new Date(`${inputMonth}, ${inputDay}, ${curYear}`);
+				break;
+				case (curMonth == inputMonth) && (curDay == inputDay):
+					bDay = 0
+				break;
+			};
+			
+		}
+		nextBday()
+
+		let daysToBday = Math.floor((bDay - curDate)/day) + 1
+
+
+		// Years, Days, Hours, Seconds from input date to today
 		const fullYears = Math.floor(timeDiff/year);
 		const daysDiff = Math.floor(timeDiff/day);
 		const hoursDiff = Math.floor(timeDiff/hour);
@@ -356,16 +383,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function displayResult(){
 			if(timeDiff >= 0){
+				// Display result
 				container2.innerHTML = resultPast;
+
 				// Output animation
 				animateValue('full-years', 0, fullYears, 1000);
 				animateValue('full-months', 0, fullMonths, 1000);
 				animateValue('full-days', 0, fullDays, 1000);
+				animateValue('days-to-bday', daysToBday-100, daysToBday, 1000);
 				animateValue('days-diff', daysDiff-100, daysDiff, 1000);
 				animateValue('hours-diff', hoursDiff-100, hoursDiff, 1000);
 				animateValue('seconds-diff', secondsDiff-100, secondsDiff, 1000);
+
+				// Display happy birthday
+				if(bDay == 0){
+					document.querySelector('.bday-wrapper').style.display = 'none'
+					document.querySelector('.happy-bday').style.display = 'inline-block'
+				};
+
 			}else{
-				container2.innerHTML = resultFurure;
+				container2.innerHTML = resultError;
 			}
 
 		}
@@ -383,5 +420,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 
 	});
+
+
+	// About section hide
+	const aboutSection = document.querySelector('.about');
+
+	document.querySelector('.close').addEventListener('click', ()=> {
+		aboutSection.style.transform = "translateX(100%)"
+	});
+
+	document.querySelector('.about-link').addEventListener('click', ()=> {
+		aboutSection.style.transform = "translateX(0)"
+	})
 
 });

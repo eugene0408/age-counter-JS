@@ -1,0 +1,61 @@
+$size: 500px
+$white: #fff
+    
+.clock
+    height: $size
+    width: $size
+    border-radius: math.div($size, 2)
+    display: flex
+    justify-content: center
+    position: relative
+    &__second, &__minute, &__hour, &__indicator
+        position: absolute
+        left: calc( 50% - 1px )
+        width: 4px
+        background: $white
+        transform-origin: bottom center
+        border-radius: 1px
+        z-index: 2
+    &__second
+        height: #{math.div($size, 2) - 10}
+        width: 3px
+        margin-top: 10px
+        background: $white
+        animation: time 5s infinite linear
+        z-index: 3
+    &__minute
+        height: #{math.div($size, 2) - 20}
+        margin-top: 20px
+        animation: time 180s linear infinite
+    &__hour
+        height: #{math.div($size, 2) - 70}
+        width: 6px
+        margin-top: 70px
+        animation: time 2160s linear infinite
+        z-index: 2
+    &__indicator
+        height: #{math.div($size, 2) - 4}
+        border-top: 4px solid $white
+        background: none
+    &__indicator:nth-of-type(5n)
+        opacity: 1
+        height: #{math.div($size, 2) - 15}
+        border-top: 15px solid $white
+    &__axis
+        background: #000
+        width: 10px
+        height: 10px
+        border-radius: 10px
+        position: absolute
+        z-index: 4
+        top: #{math.div($size, 2) - 3}
+
+@for $i from 1 through 60
+    section:nth-of-type(#{$i})
+        transform: rotateZ(calc(6deg * #{$i}))    
+
+@keyframes time
+    100%
+        transform: rotateZ(360deg)
+         
+
