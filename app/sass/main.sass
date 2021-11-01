@@ -16,8 +16,8 @@ body
     position: fixed
     top: 0
     left: 0
-    height: 100vh
-    width: 100vw
+    bottom: 0
+    right: 0
     display: flex
     justify-content: center
     align-items: center
@@ -104,6 +104,7 @@ h1
     padding: .5em 1em
     text-align: center
 .out-time
+    margin-top: 1em
     ul
         list-style: none
     li
@@ -120,6 +121,7 @@ h1
             font-size: 36px
             font-weight: 800
     +media-breakpoint-down(sm)
+        margin-top: .5em
         ul
             width: 100%
             padding-left: 0
@@ -164,8 +166,8 @@ h1
         font-size: 1.5em
         background: #fff
         border-radius: 50% 
-        height: 2.1em
-        width: 2.1em
+        height: 1.9em
+        width: 1.9em
         display: flex
         justify-content: center
         align-items: center
@@ -179,6 +181,8 @@ h1
         width: fit-content
         .black
             font-size: 36px
+            height: 2.1em
+            width: 2.1em
 .happy-bday
     img
         height: 65%
@@ -214,7 +218,7 @@ h1
     +media-breakpoint-down(sm)
         flex-direction: column
         padding-top: 0
-        margin-top: 1em
+        margin-top: 2.5em
 .button
     margin-top: 2em
     font-size: 25px
@@ -225,10 +229,10 @@ h1
     color: #000
     font-weight: 800
     transition: .3s ease
+    box-sizing: border-box
     +media-breakpoint-up(md)
         &:hover
-            background: $orange
-            color: #fff
+            box-shadow: inset 0px 0px 0px 2px #000
     +media-breakpoint-down(sm)
         margin-top: 1.5em
         font-size: 25px
@@ -247,20 +251,21 @@ h1
 
 .about-link
     position: fixed
-    right: 20px
+    right: 10px
     bottom: 10px
     line-height: 1
     display: inline-block
-    font-size: 16px
+    font-size: 14px
     font-weight: 500
     color: rgba(#fff, .6)
     transition: .3s ease
     cursor: pointer
     z-index: 50
-    &:hover
-        color: #fff
-        span
-            color: $orange
+    +media-breakpoint-up(md)
+        &:hover
+            color: #fff
+            span
+                color: $orange
 
 .about
     position: fixed
@@ -281,6 +286,19 @@ h1
     text-align: center
     &__text
         padding-top: 2em
+        a 
+            .yellow::after
+                content: ">"
+                color: #fff
+                font-size: 1.3em
+                font-weight: 300
+                padding-left: .2em
+                transition: all .3s ease
+        +media-breakpoint-up(md)
+            a:hover
+                .yellow::after
+                    color: $orange
+
     .close
         position: relative
         height: 50px

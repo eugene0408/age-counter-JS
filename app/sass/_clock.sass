@@ -1,5 +1,6 @@
-$size: 500px
 $white: #fff
+$size: 500px
+$msize: 375px
     
 .clock
     height: $size
@@ -49,6 +50,22 @@ $white: #fff
         position: absolute
         z-index: 4
         top: #{math.div($size, 2) - 3}
+    +media-breakpoint-down(sm)
+        height: $msize
+        width: $msize
+        border-radius: math.div($msize, 2)
+        &__second
+            height: #{math.div($msize, 2) - 10}
+        &__minute
+            height: #{math.div($msize, 2) - 20}
+        &__hour
+            height: #{math.div($msize, 2) - 70}
+        &__indicator
+            height: #{math.div($msize, 2) - 4}
+        &__indicator:nth-of-type(5n)
+            height: #{math.div($msize, 2) - 15}
+        &__axis
+            top: #{math.div($msize, 2) - 3}
 
 @for $i from 1 through 60
     section:nth-of-type(#{$i})
