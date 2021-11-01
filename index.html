@@ -4,9 +4,10 @@
 <head>
 
 	<meta charset="utf-8">
+	<!-- <base href="/"> -->
 
-	<title>Age Counter</title>
-	<meta name="description" content="How old are you today">
+	<title></title>
+	<meta name="description" content="Startup HTML template OptimizedHTML 5">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -210,23 +211,23 @@
 
 
 			<div class="out-main">
-				<h2><span class="orange">Today</span> you are<span class="orange">:</span></h2>
-					<h1>
-						<span class="yellow" id="full-years">0</span>
-						 years 
-						<span class="yellow" id="full-months">0</span>
-						 months and 
-						<span class="yellow" id="full-days">0</span>
-						 days<br>
+				<h2><span class="yellow">Today</span> you are<span class="orange">:</span></h2>
+					<div class="out-main__text">
+						<span class="black" id="full-years">0</span>
+							<span class="orange">y</span>ears
+						<span class="black" id="full-months">0</span>
+							<span class="orange">m</span>onths and 
+						<span class="black" id="full-days">0</span>
+							<span class="orange">d</span>ays<br>
 						 old
-					</h1>
+					</div>
 				
 			</div>
 				<!-- ------------------------------------------------------------ -->
 				<div class="bday-wrapper">
 					<h2>
 						Days to 
-						<span class="orange">
+						<span class="yellow">
 							next
 						</span>
 							birthday 
@@ -234,23 +235,26 @@
 								:
 						</span>
 						<br>
-						<span class="yellow" id="days-to-bday">
+						<span class="black" id="days-to-bday">
 							0
 						</span>
 					</h2>
 				</div>
 			
 				<div class="happy-bday" style="display: none;">
-					<h2>Happy <span class="orange">birthday</span> to you<span class="orange">!</span></h2>
+					<h2>
+						Happy <span class="yellow">birthday</span> to you<span class="orange">!</span>
+						<span class="black"><img src="images/dist/birthday-cake.svg" alt=":-)"></span>
+					</h2>
 				</div>
 			
 				<!-- ------------------------------------------------------------------------ -->
 				<div class="out-time">
-					<h2><span class="orange">You</span> have lived <span class="orange">:</span></h2>
+					<h2><span class="yellow">You</span> have lived <span class="orange">:</span></h2>
 					<ul>
-						<li><span class="yellow" id="days-diff">0</span> days<span class="orange">,</span></li>
-						<li><span class="yellow" id="hours-diff">0</span> hours<span class="orange">,</span></li>
-						<li><span class="yellow" id="seconds-diff">0</span> seconds<span class="orange">.</span></li>
+						<li><span class="black" id="days-diff">0</span> days<span class="orange">,</span></li>
+						<li><span class="black" id="hours-diff">0</span> hours<span class="orange">,</span></li>
+						<li><span class="black" id="seconds-diff">0</span> seconds<span class="orange">.</span></li>
 					</ul>
 				</div>
 			
@@ -260,7 +264,7 @@
 		</div>
 		<!-- --------------------------------------------------------------- -->
 		<div class="out-error-eng">
-	 		<h1><span class="orange">Invalid</span> date</h1><br>
+	 		<h1><span class="orange">Wrong</span> date</h1><br>
 			<h2 class="invalid-date"></h2>
 		 	<button class="button return-btn">Return</button>
 		</div>
@@ -292,18 +296,28 @@
 
 
 			<div class="out-main">
-				<h2><span class="orange">Сьогодні</span> вам<span class="orange">:</span></h2>
+				<h2><span class="yellow">Сьогодні</span> вам<span class="orange">:</span></h2>
 				
-					<h1>
-						<span class="yellow" id="full-years">0</span> років <span class="yellow" id="full-months">0</span> місяців і<br> <span class="yellow" id="full-days">0</span> днів
-					</h1>
+					<div class="out-main__text">
+						<span class="black" id="full-years">
+							0
+						</span>
+						<span class="orange">р</span>оків 
+						<span class="black" id="full-months">
+							 0
+						</span>
+						<span class="orange">м</span>ісяців і
+						<span class="black" id="full-days">
+							 0
+						</span> <span class="orange">д</span>нів
+					</div>
 			</div>
 			
 			<!-- --------------------------------------------------------------------- -->
 			<div class="bday-wrapper">
 				<h2>
 					Днів до 
-					<span class="orange">
+					<span class="yellow">
 						дня
 					</span>
 					 народження
@@ -311,23 +325,27 @@
 						 :
 					</span>
 					<br>
-					<span class="yellow" id="days-to-bday">
+					<span class="black" id="days-to-bday">
 						0
 					</span>
 				</h2>
 			</div>
 
 			<div class="happy-bday" style="display: none;">
-				<h2>З <span class="orange">днем</span> народження<span class="orange">!</span></h2>
+				<h2>
+					З <span class="yellow">днем</span> народження<span class="orange">!</span>
+					<span class="black"><img src="images/dist/birthday-cake.svg" alt=":-)"></span>
+				</h2>
+
 			</div>
 
 			<!-- ------------------------------------------------------------------------- -->
 				<div class="out-time">
-					<h2><span class="orange">Ви</span>  прожили<span class="orange">:</span></h2>
+					<h2><span class="yellow">Ви</span>  прожили<span class="orange">:</span></h2>
 					<ul>
-						<li><span class="yellow" id="days-diff">0</span> днів<span class="orange">,</span></li>
-						<li><span class="yellow" id="hours-diff">0</span> годин<span class="orange">,</span></li>
-						<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
+						<li><span class="black" id="days-diff">0</span> днів<span class="orange">,</span></li>
+						<li><span class="black" id="hours-diff">0</span> годин<span class="orange">,</span></li>
+						<li><span class="black" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
 					</ul>
 				</div>
 			<button class="button return-btn">Назад</button>
@@ -362,9 +380,11 @@
 		<div class="out-past-ru">
 			<div class="out-main">
 				<h2><span class="orange">Сегодня</span> вам<span class="orange">:</span></h2> 
-					<h1>
-						<span class="yellow" id="full-years">0</span> лет <span class="yellow" id="full-months">0</span> месяцев и<br> <span class="yellow" id="full-days">0</span> дней<br>
-					</h1>
+					<div class="out-main__text">
+						<span class="black" id="full-years">0</span> <span class="orange">л</span>ет 
+						<span class="black" id="full-months">0</span> <span class="orange">м</span>есяцев и
+						 <span class="black" id="full-days">0</span> <span class="orange">д</span>ней<br>
+					</div>
 			</div>
 			
 
@@ -373,7 +393,7 @@
 			<div class="bday-wrapper">
 				<h2>
 					Дней до 
-					<span class="orange">
+					<span class="yellow">
 						дня
 					</span>
 					 рождения
@@ -381,24 +401,27 @@
 						 :
 					</span>
 					<br>
-					<span class="yellow" id="days-to-bday">
+					<span class="black" id="days-to-bday">
 						0
 					</span>
 				</h2>
 			</div>
 
 			<div class="happy-bday" style="display: none;">
-				<h2>С <span class="orange">днем</span> рождения<span class="orange">!</span></h2>
+				<h2>
+					С <span class="yellow">днем</span> рождения<span class="orange">!</span>
+					<span class="black"><img src="images/dist/birthday-cake.svg" alt=":-)"></span>
+				</h2>
 			</div>
 
 			<!-- ------------------------------------------------------------------------------------ -->
 
 				<div class="out-time">
-					<h2>Вы<span class="orange"> прожили</span>:</h2>
+					<h2>Вы<span class="yellow"> прожили</span>:</h2>
 					<ul>
-						<li><span class="yellow" id="days-diff">0</span> дней<span class="orange">,</span></li>
-						<li><span class="yellow" id="hours-diff">0</span> часов<span class="orange">,</span></li>
-						<li><span class="yellow" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
+						<li><span class="black" id="days-diff">0</span> дней<span class="orange">,</span></li>
+						<li><span class="black" id="hours-diff">0</span> часов<span class="orange">,</span></li>
+						<li><span class="black" id="seconds-diff">0</span> секунд<span class="orange">.</span></li>
 					</ul>
 				</div>
 			<button class="button return-btn">Назад</button>
