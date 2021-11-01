@@ -111,34 +111,36 @@ h1
         line-height: 1
         margin-top: .3em
         width: 120%
-        background: rgba(#000, .3)
-        border: 1px solid rgba(#000, .05)
-        backdrop-filter: blur(4px)
-        box-shadow: 0 4px 30px rgba(#000, 0.05)
+        background: #fff
         border-radius: 10px  
         padding: .5em 1em
         text-align: left
-        .yellow
+        color: rgba(#000, .7)
+        .black
             font-size: 36px
             font-weight: 800
     +media-breakpoint-down(sm)
         ul
             width: 100%
             padding-left: 0
-            .yellow
+            .black
                 font-size: 28px
 
 .out-main
     padding: .2em 1em
-    h1
-        background: rgba(#000, .3)
-        border: 1px solid rgba(#000, .05)
-        backdrop-filter: blur(4px)
-        box-shadow: 0 4px 30px rgba(#000, 0.05)
-        border-radius: 10px 
-        padding: .3em .5em
-        br 
-            display: none
+.out-main__text
+    background: #fff
+    color: rgba(#000, .7)
+    display: inline-block
+    font-size: 22px
+    font-weight: 600
+    border-radius: 10px
+    padding: .5em
+    .black
+        font-size: 36px
+        font-weight: 800
+    br 
+        display: none
     +media-breakpoint-down(sm)
         padding: .1em .2em 
         width: 100vw
@@ -157,29 +159,31 @@ h1
     background: rgba(#000, .1)
     backdrop-filter: blur(10px) 
     border-radius: 10px 
-.bday-wrapper
-    padding-bottom: 1.5em  
-    .yellow
+    padding-bottom: 2em  
+    .black
         font-size: 1.5em
-        background: rgba(#000, .3)
-        border: 1px solid rgba(#000, .05)
-        backdrop-filter: blur(4px)
-        box-shadow: 0 4px 30px rgba(#000, 0.05)
-        border-radius: 10px 
-        padding: 0 .8em
+        background: #fff
+        border-radius: 50% 
+        height: 2.1em
+        width: 2.1em
+        display: flex
+        justify-content: center
+        align-items: center
         position: absolute
-        bottom: 0
+        bottom: -5px
         left: 50%
         transform: translateX(-50%) translateY(50%)
+        z-index: 1
     +media-breakpoint-down(sm)
-        padding: .8em .3em
+        padding: 1em .3em
         width: fit-content
-        .yellow
+        .black
             font-size: 36px
-
 .happy-bday
-    h2
-        animation: pulse 2s infinite linear
+    img
+        height: 65%
+        width: 65%
+        animation: pulse 1.5s infinite linear
 
 @keyframes pulse
     0%
@@ -233,6 +237,8 @@ h1
     color: $yellow
 .orange
     color: $orange
+.black
+    color: #000
 
 .hide-item
     display: none
