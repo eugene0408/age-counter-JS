@@ -9,8 +9,7 @@ Calculating of:
  </pre>
  Live site: https://age-counter.tk
  <pre>
- Preview:
- </pre>
+ Preview:</pre>
  ![](preview.gif)
  
  
