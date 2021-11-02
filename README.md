@@ -4,6 +4,7 @@ Calculating of:
   -days to next birthday  
   -age in days, hours, seconds  
   -language select  
+  -responsive 
  
  Live site: https://age-counter.tk
  
