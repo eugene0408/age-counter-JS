@@ -101,7 +101,7 @@ h1
     border-top: 1px solid rgba(#fff, .1)
     border-left: 1px solid rgba(#fff, .1)
     backdrop-filter: blur(4px)
-    border-radius: 20px  
+    border-radius: 15px  
     padding: .5em 1em
     text-align: center
 .out-main
@@ -127,6 +127,11 @@ h1
         margin: 0 .5em
         padding: .3em .2em
         display: inline-block
+        cursor: pointer
+        +media-breakpoint-up(md)
+            &:hover
+                .black
+                    transform: scale(1.15)
     p 
         margin-bottom: 0
     .black
@@ -135,6 +140,7 @@ h1
         font-size: 36px
         font-weight: 800
         line-height: 1.1
+        transition: all .3s ease
     +media-breakpoint-down(sm)
         .black
             font-size: 32px
@@ -166,9 +172,14 @@ h1
         padding: .5em 1em
         text-align: left
         color: rgba(#000, .7)
+        transition: .3s ease
+        cursor: pointer
         .black
             font-size: 36px
             font-weight: 800
+        +media-breakpoint-up(md)
+            &:hover
+                transform: translateZ(20px)
     +media-breakpoint-down(sm)
         margin-top: .8em
         height: 8.5em
@@ -208,8 +219,14 @@ h1
         position: absolute
         bottom: 0
         left: 50%
-        transform: translateX(-50%) translateY(50%)
+        transform: translateX(-50%) translateY(50%) perspective(1500px)
+        transform-style: preserve-3d
         z-index: 1
+        transition: all .3s ease
+        cursor: pointer
+        +media-breakpoint-up(md)
+            &:hover
+                transform: translateX(-50%) translateY(50%) scale(1.05)
     +media-breakpoint-down(sm)
         padding: 1em 0 1.4em 0
         width: 95vw
