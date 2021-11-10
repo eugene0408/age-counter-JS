@@ -12,7 +12,7 @@ $msize: 375px
     &__second, &__minute, &__hour, &__indicator
         position: absolute
         left: calc( 50% - 1px )
-        width: 4px
+        width: 5px
         background: $white
         transform-origin: bottom center
         border-radius: 1px
@@ -36,14 +36,14 @@ $msize: 375px
         z-index: 2
     &__indicator
         height: #{math.div($size, 2) - 4}
-        border-top: 4px solid $white
+        border-top: 6px solid $white
         background: none
     &__indicator:nth-of-type(5n)
         opacity: 1
         height: #{math.div($size, 2) - 15}
         border-top: 15px solid $white
     &__axis
-        background: #000
+        background: $white
         width: 10px
         height: 10px
         border-radius: 10px
