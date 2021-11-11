@@ -31,7 +31,7 @@ function browsersync() {
 		ghostMode: { clicks: false },
 		notify: false,
 		online: true,
-		tunnel: 'agecount', // Attempt to use the URL https://yousutename.loca.lt
+		//tunnel: 'agecount', // Attempt to use the URL https://yousutename.loca.lt
 	})
 }
 
