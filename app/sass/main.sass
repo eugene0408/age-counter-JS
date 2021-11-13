@@ -46,12 +46,12 @@ body
     border-radius: 15px
     img
         height: 1.5em
-        margin-right: .5em
+        margin-right: 1.2em
     button
         border: none
         border-radius: 10px
         background: #fff
-        margin-top: .3em
+        margin-top: .5em
         font-size: 21px
         font-weight: 900
         color: #000
@@ -59,7 +59,7 @@ body
         align-items: center
         width: 100%
         transition: all .3s ease
-        padding: .2em .5em
+        padding: .2em .8em
         +media-breakpoint-up(md)
             &:hover
                 background: $yellow
@@ -88,7 +88,7 @@ body
         -webkit-backdrop-filter: blur(8px)
         backdrop-filter: blur(8px)
 .light-bd-blur
-    background: rgba($dark-bg, .98)
+    background: rgba($dark-bg, .9) //Mozilla fallback 
 @supports ((-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px)))
     .light-bd-blur
         background: rgba(#fff, .1)
@@ -165,13 +165,13 @@ h1
 
 .out-time
     position: relative
+    display: inline-block
     transform: perspective(1500px)
-    transform-style: preserve-3d
     margin-top: 1em
     margin-bottom: 1em
     height: 10em
     width: 18em
-    z-index: 1
+    z-index: 0
     ul
         position: absolute
         left: 2em 
@@ -180,7 +180,7 @@ h1
         list-style: none
         transform-style: preserve-3d
         transform-origin: center
-        transform: perspective(1500px) rotateY(25deg) 
+        transform: perspective(1500px) rotateY(25deg)
         padding-left: 1em
         z-index: 2
     li
@@ -196,6 +196,7 @@ h1
         transition: .3s ease
         cursor: pointer
         z-index: 30
+        transform: translateZ(0)
         .black
             font-size: 36px
             font-weight: 800
