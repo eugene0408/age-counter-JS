@@ -12,6 +12,9 @@ body
     color: #fff
     background-image: url(../images/dist/mountains.jpg)
     overflow: hidden
+    +media-breakpoint-down(sm)
+        background-size: cover
+        background-position: center center
 .bg-image
     position: fixed
     top: 0
@@ -80,30 +83,23 @@ body
         height: 100%
         width: 100%
 
-.dark-bd-blur //Mozilla fallback 
-    background: rgba($dark-bg, .99)
-@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px)))
-    .dark-bd-blur
-        background: rgba($dark-bg, .9)
-        -webkit-backdrop-filter: blur(8px)
-        backdrop-filter: blur(8px)
-.light-bd-blur
-    background: rgba($dark-bg, .9) //Mozilla fallback 
-@supports ((-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px)))
-    .light-bd-blur
-        background: rgba(#fff, .1)
-        -webkit-backdrop-filter: blur(4px)
-        backdrop-filter: blur(4px)
 
+.main-container
+    height: 100vh
+    position: relative
 
 .inputs-wrapper, .out-wrapper
-    display: flex
     height: 100%
+    width: 100%
     justify-content: center
     align-items: center
     flex-direction: column
     z-index: 1
+    position: absolute
+    top: 0
+    left: 0
 .inputs-wrapper
+    display: flex
     transition: all 1s ease
 h1	
     font-size: 38px
@@ -111,10 +107,35 @@ h1
     text-align: center
     z-index: 1
 .out-wrapper
+    display: none
     transition: 1s ease
+    height: 100%
     h2
         font-weight: 700
         font-size: 28px
+  
+.inputs 
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: row
+    padding-bottom: 4em
+    padding-top: .5em
+    margin-top: 2em
+    &__item
+        display: inline-block
+        width: 8em
+    label
+        width: 100%
+    select 
+        position: relative
+        font-size: 22px
+        font-weight: 600
+    +media-breakpoint-down(sm)
+        flex-direction: column
+        padding-top: 0
+        margin-top: 2.5em
+
 .out-main, .out-time     
     border-top: 1px solid rgba(#fff, .1)
     border-left: 1px solid rgba(#fff, .1)  
@@ -249,7 +270,7 @@ h1
             &:hover
                 transform: translateX(-50%) translateY(50%) scale(1.05)
     +media-breakpoint-down(sm)
-        padding: 1em 0 1.4em 0
+        padding: .3em 0 1.4em 0
         width: 95vw
         h2 
             display: block
@@ -271,29 +292,24 @@ h1
         transform: scale(1.1)
     100%
         transform: scale(1)
+
+
+.dark-bd-blur //Mozilla fallback 
+    background: rgba($dark-bg, .99)
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px)))
+    .dark-bd-blur
+        background: rgba($dark-bg, .9)
+        -webkit-backdrop-filter: blur(8px)
+        backdrop-filter: blur(8px)
+.light-bd-blur
+    background: rgba($dark-bg, .9) //Mozilla fallback 
+@supports ((-webkit-backdrop-filter: blur(4px)) or (backdrop-filter: blur(4px)))
+    .light-bd-blur
+        background: rgba(#fff, .1)
+        -webkit-backdrop-filter: blur(4px)
+        backdrop-filter: blur(4px)
         
 
-.inputs 
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: row
-    padding-bottom: 4em
-    padding-top: .5em
-    margin-top: 2em
-    &__item
-        display: inline-block
-        width: 8em
-    label
-        width: 100%
-    select 
-        position: relative
-        font-size: 22px
-        font-weight: 600
-    +media-breakpoint-down(sm)
-        flex-direction: column
-        padding-top: 0
-        margin-top: 2.5em
 .button
     margin-top: 2em
     font-size: 22px
@@ -404,12 +420,39 @@ h1
             transform: translateX(-5px)
         100%
             transform: translateX(0)
-            
-            
-            
+              
 
     h4
         margin-top: .5em
 .out-language-options
     display: none
     opacity: 0
+
+
+.show-animation
+    animation: fadeIn .5s linear
+
+.hide-animation
+    animation: fadeOut .5s linear
+
+
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+@keyframes fadeOut
+    0%
+        opacity: 1
+        transform: scale(1)
+    100%
+        transform: scale(.6)
+        opacity: 0
+        
+
+
+
+        
+
+

@@ -1,7 +1,7 @@
 
 // Containers
-const container1 = document.querySelector('.inputs-wrapper'),
-	container2 = document.querySelector('.out-wrapper');
+const inputsContainer = document.querySelector('.inputs-wrapper'),
+	outContainer = document.querySelector('.out-wrapper');
 // ----------------------------------------------------
 //   Dates
 // ----------------------------------------------------
@@ -219,6 +219,10 @@ let monthLength = 31;
 
 
 
+
+
+
+
 // ---------------------------------------------------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -268,7 +272,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 
-	// Start button
+	// Show Hide Containers
+	function switchContainer(hideCont, showCont){
+		showCont.classList.remove("show-animation")
+		showCont.style.opacity = "1"
+		hideCont.classList.add("hide-animation")
+		setTimeout(()=> {
+			hideCont.style.opacity = "0"
+			hideCont.style.display = "none";
+			hideCont.classList.remove("hide-animation");
+			showCont.style.display = "flex";
+			showCont.classList.add("show-animation")
+		}, 500)
+	}
+
+	// Start button   ------------------------------------------
 	let strartBtn = document.querySelector('.start-btn');
 
 	strartBtn.addEventListener('click', ()=>{
@@ -358,10 +376,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		const secondsDiff = Math.floor(timeDiff/second);
 
 
+
+		// Show output container
+		switchContainer(inputsContainer, outContainer)
 	
-		container1.style.transform = "translateY(-100%)";
-		container2.style.transform = "translateY(-100%)";
-		
 		// Animated counter
 		function animateValue(id, start, end, duration) {
 			if (start === end) return;
@@ -384,7 +402,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		function displayResult(){
 			if(timeDiff >= 0){
 				// Display result
-				container2.innerHTML = resultPast;
+				outContainer.innerHTML = resultPast;
 
 				// Output animation
 				animateValue('full-years', 0, fullYears, 1000);
@@ -402,7 +420,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				};
 
 			}else{
-				container2.innerHTML = resultError;
+				outContainer.innerHTML = resultError;
 			}
 
 		}
@@ -412,11 +430,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		returnBtn.forEach((el)=>{
 			el.addEventListener('click', ()=>{
-				container1.style.transform = "translateY(0)";
-				container2.style.transform = "translateY(0)";
-				showIcon();
+					switchContainer(outContainer, inputsContainer)
+					showIcon();
+				})	
 			});
-		})
+	
 		
 
 	});
