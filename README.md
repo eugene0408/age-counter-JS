@@ -7,7 +7,7 @@ Calculating of:
   -language select  
   -responsive 
  </pre>
- Live site: https://age-counter.tk
+ Live site: https://eugene0408.github.io/age-counter-JS/
  <pre>
  Preview:</pre>
  ![](preview.gif)
